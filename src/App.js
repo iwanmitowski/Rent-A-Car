@@ -6,13 +6,10 @@ import { Login } from "./components/auth/login/Login";
 import { Register } from "./components/auth/register/Register";
 import { NonAuthenticatedGuard } from "./utils/guards/NonAuthenticatedGuard";
 import { AuthenticatedGuard } from "./utils/guards/AuthenticatedGuard";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 function App() {
   const [isLogged, setIsLogged] = useState(false);
-    
-  useEffect(() => {
-  }, [isLogged]);
 
   return (
     <div className="App">
