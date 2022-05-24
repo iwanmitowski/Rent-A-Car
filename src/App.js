@@ -4,15 +4,23 @@ import Layout from "./components/layout/Layout";
 import Home from "./components/home/Home";
 import { Login } from "./components/auth/login/Login";
 import { Register } from "./components/auth/register/Register";
+import { NonAuthenticatedGuard } from "./utils/guards/NonAuthenticatedGuard";
+import { AuthenticatedGuard } from "./utils/guards/AuthenticatedGuard";
+import { useEffect, useState } from "react";
 
 function App() {
+  const [isLogged, setIsLogged] = useState(false);
+    
+  useEffect(() => {
+  }, [isLogged]);
+
   return (
     <div className="App">
       <Routes>
-        <Route exact path="/login" element={<Login />} />
-        <Route exact path="/register" element={<Register />} />
-        <Route exact path="/" element={<Layout />}>
+        <Route exact path="/" element={<Layout isLogged={isLogged} />}>
           <Route path="/" element={<Home />} />
+          <Route exact path="/login" element={<NonAuthenticatedGuard><Login setIsLogged={setIsLogged}/></NonAuthenticatedGuard>} />
+          <Route exact path="/register" element={<NonAuthenticatedGuard><Register setIsLogged={setIsLogged}/></NonAuthenticatedGuard>} />
         </Route>
       </Routes>
     </div>
