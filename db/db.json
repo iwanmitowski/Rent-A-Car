@@ -1,121 +1,121 @@
 {
-    "users": [
-        {
-            "id": "f529a9c7-b5bb-4d3c-a451-825c03b12013",
-            "picture": "https://picsum.photos/200/300?random=1",
-            "name": "Kelly Johns",
-            "email": "a@a.a",
-            "password": "a@a.a",
-            "phone": "+1 (977) 521-3716",
-            "isVip": false,
-            "money": 5000
-        },
-        {
-            "id": "c3cd55ff-03e8-4e06-b4ee-fab89847958c",
-            "isActive": false,
-            "picture": "https://picsum.photos/200/300?random=2",
-            "name": "Tami Carlson",
-            "email": "tamicarlson@caxt.com",
-            "password": "a@a.a",
-            "phone": "+1 (988) 494-2020",
-            "isVip": false,
-            "money": 510
-        },
-        {
-            "id": "c5a4e854-9689-4eb0-979a-12212d838d2b",
-            "isActive": false,
-            "picture": "https://picsum.photos/200/300?random=3",
-            "name": "Rosemarie Schneider",
-            "email": "rosemarieschneider@caxt.com",
-            "password": "a@a.a",
-            "phone": "+1 (942) 477-2273",
-            "isVip": false,
-            "money": 420
-        },
-        {
-            "id": "70ad681a-75b0-4f05-8f80-cd5f36de57df",
-            "isActive": false,
-            "picture": "https://picsum.photos/200/300?random=4",
-            "name": "Silva Patton",
-            "email": "silvapatton@caxt.com",
-            "password": "a@a.a",
-            "phone": "+1 (941) 545-2163",
-            "isVip": false,
-            "money": 689.66
-        },
-        {
-            "id": "7cb88485-534b-4f61-a8e3-07a7fa3bd47f",
-            "isActive": false,
-            "picture": "https://picsum.photos/200/300?random=5",
-            "name": "Bertha Gray",
-            "email": "berthagray@caxt.com",
-            "password": "a@a.a",
-            "phone": "+1 (861) 443-2680",
-            "isVip": false,
-            "money": 1000
-        }
-    ],
-    "cars": [
-        {
-            "id": "e3a36c63-1e51-4199-b02b-44255a020737",
-            "isActive": false,
-            "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Lada_2107_aka_Lada_Riva_October_1995_1452cc.jpg/1200px-Lada_2107_aka_Lada_Riva_October_1995_1452cc.jpg",
-            "brand": "Lada",
-            "model": "S Class",
-            "constructionYear": "2018-12-19T11:33:41 -02:00",
-            "type": "estate",
-            "seatsCount": 5,
-            "pricePerDay": 689.66,
-            "count": 5
-        },
-        {
-            "id": "3efa5493-020a-4397-82c6-45e02229bd1e",
-            "isActive": true,
-            "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f0/BMW_G11_IMG_2002.jpg",
-            "brand": "BMW",
-            "model": "C180",
-            "constructionYear": "2016-12-30T08:09:05 -02:00",
-            "type": "SUV",
-            "seatsCount": 4,
-            "pricePerDay": 232.75,
-            "count": 6
-        },
-        {
-            "id": "6230608a-e4df-445b-bba5-15ed70a197fb",
-            "isActive": false,
-            "imageUrl": "https://www.nastarta.com/wp-content/uploads/2019/05/5b08aa21-ferrari-sf90-stradale-2.jpg",
-            "brand": "Ferrari",
-            "model": "Golf",
-            "constructionYear": "2018-07-26T02:52:10 -03:00",
-            "type": "SUV",
-            "seatsCount": 2,
-            "pricePerDay": 113.72,
-            "count": 8
-        },
-        {
-            "id": "e9b82c0f-9ea0-4cc4-a84f-a1b9992349b2",
-            "isActive": false,
-            "imageUrl": "https://automedia.investor.bg//media/files/resized/article/w1200x630/2d1/9ad87478c7c4aa258c0be4d35b31d2d1-ferrari-sf90-stradale-2020-800-02.jpg",
-            "brand": "Ferrari",
-            "model": "C180",
-            "constructionYear": "2014-06-09T07:56:33 -03:00",
-            "type": "luxury",
-            "seatsCount": 4,
-            "pricePerDay": 670.77,
-            "count": 4
-        },
-        {
-            "id": "314e4bee-a260-40dc-823a-e5e253eba2c0",
-            "isActive": true,
-            "imageUrl": "https://autobild.bg/wp-content/uploads/2019/10/1200px-VW_Golf_IV_1.6_1997%E2%80%932003_front_MJ.jpg",
-            "brand": "VW",
-            "model": "C180",
-            "constructionYear": "2020-05-24T05:44:04 -03:00",
-            "type": "estate",
-            "seatsCount": 5,
-            "pricePerDay": 270.11,
-            "count": 3
-        }
-    ],
-    "rentals": []
+  "users": [
+    {
+      "id": "f529a9c7-b5bb-4d3c-a451-825c03b12013",
+      "imageUrl": "https://picsum.photos/200/300?random=1",
+      "name": "Kelly Johns",
+      "email": "a@a.a",
+      "password": "a@a.a",
+      "phone": "+1 (977) 521-3716",
+      "isVip": false,
+      "money": 5000
+    },
+    {
+      "id": "c3cd55ff-03e8-4e06-b4ee-fab89847958c",
+      "isActive": false,
+      "imageUrl": "https://picsum.photos/200/300?random=2",
+      "name": "Tami Carlson",
+      "email": "tamicarlson@caxt.com",
+      "password": "a@a.a",
+      "phone": "+1 (988) 494-2020",
+      "isVip": false,
+      "money": 510
+    },
+    {
+      "id": "c5a4e854-9689-4eb0-979a-12212d838d2b",
+      "isActive": false,
+      "imageUrl": "https://picsum.photos/200/300?random=3",
+      "name": "Rosemarie Schneider",
+      "email": "rosemarieschneider@caxt.com",
+      "password": "a@a.a",
+      "phone": "+1 (942) 477-2273",
+      "isVip": false,
+      "money": 420
+    },
+    {
+      "id": "70ad681a-75b0-4f05-8f80-cd5f36de57df",
+      "isActive": false,
+      "imageUrl": "https://picsum.photos/200/300?random=4",
+      "name": "Silva Patton",
+      "email": "silvapatton@caxt.com",
+      "password": "a@a.a",
+      "phone": "+1 (941) 545-2163",
+      "isVip": false,
+      "money": 689.66
+    },
+    {
+      "id": "7cb88485-534b-4f61-a8e3-07a7fa3bd47f",
+      "isActive": false,
+      "imageUrl": "https://picsum.photos/200/300?random=5",
+      "name": "Bertha Gray",
+      "email": "berthagray@caxt.com",
+      "password": "a@a.a",
+      "phone": "+1 (861) 443-2680",
+      "isVip": false,
+      "money": 1000
+    }
+  ],
+  "cars": [
+    {
+      "id": "e3a36c63-1e51-4199-b02b-44255a020737",
+      "isActive": false,
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Lada_2107_aka_Lada_Riva_October_1995_1452cc.jpg/1200px-Lada_2107_aka_Lada_Riva_October_1995_1452cc.jpg",
+      "brand": "Lada",
+      "model": "S Class",
+      "constructionYear": "2018-12-19T11:33:41 -02:00",
+      "type": "estate",
+      "seatsCount": 5,
+      "pricePerDay": 689.66,
+      "count": 5
+    },
+    {
+      "id": "3efa5493-020a-4397-82c6-45e02229bd1e",
+      "isActive": true,
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f0/BMW_G11_IMG_2002.jpg",
+      "brand": "BMW",
+      "model": "C180",
+      "constructionYear": "2016-12-30T08:09:05 -02:00",
+      "type": "SUV",
+      "seatsCount": 4,
+      "pricePerDay": 232.75,
+      "count": 6
+    },
+    {
+      "id": "6230608a-e4df-445b-bba5-15ed70a197fb",
+      "isActive": false,
+      "imageUrl": "https://www.nastarta.com/wp-content/uploads/2019/05/5b08aa21-ferrari-sf90-stradale-2.jpg",
+      "brand": "Ferrari",
+      "model": "Golf",
+      "constructionYear": "2018-07-26T02:52:10 -03:00",
+      "type": "SUV",
+      "seatsCount": 2,
+      "pricePerDay": 113.72,
+      "count": 8
+    },
+    {
+      "id": "e9b82c0f-9ea0-4cc4-a84f-a1b9992349b2",
+      "isActive": false,
+      "imageUrl": "https://automedia.investor.bg//media/files/resized/article/w1200x630/2d1/9ad87478c7c4aa258c0be4d35b31d2d1-ferrari-sf90-stradale-2020-800-02.jpg",
+      "brand": "Ferrari",
+      "model": "C180",
+      "constructionYear": "2014-06-09T07:56:33 -03:00",
+      "type": "luxury",
+      "seatsCount": 4,
+      "pricePerDay": 670.77,
+      "count": 4
+    },
+    {
+      "id": "314e4bee-a260-40dc-823a-e5e253eba2c0",
+      "isActive": true,
+      "imageUrl": "https://autobild.bg/wp-content/uploads/2019/10/1200px-VW_Golf_IV_1.6_1997%E2%80%932003_front_MJ.jpg",
+      "brand": "VW",
+      "model": "C180",
+      "constructionYear": "2020-05-24T05:44:04 -03:00",
+      "type": "estate",
+      "seatsCount": 5,
+      "pricePerDay": 270.11,
+      "count": 3
+    }
+  ],
+  "rentals": []
 }
