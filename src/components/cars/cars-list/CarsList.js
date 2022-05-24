@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { deleteCar, getAllCars, getCarsForUser, getNonUserCars } from "../../../services/cars-service";
+import { deleteCar, getAllCars, getCarById, getCarsForUser, getNonUserCars } from "../../../services/cars-service";
 import { CarCard } from "../car-card/CarCard";
 import './CarsList.css';
 
@@ -9,15 +9,21 @@ export function CarsList(props) {
     const params = useParams();
 
     const areMine = props.areMine;
+    const isDetails = props.isDetails;
 
     useEffect(() => {
-        // Mine cars
-        console.log(params.id)
-        if(params.id && areMine) {
+        if (isDetails) {
+            getCarById(params.id)
+                .then(res => {
+                    setCars(res.data);
+                })
+                .catch();
+            
+            return;
+        } else if(params.id && areMine) {
             getCarsForUser(params.id)
                 .then(res => {
                     setCars(res.data);
-                    console.log(cars);
                 })
                 .catch();
 
@@ -26,17 +32,14 @@ export function CarsList(props) {
             getNonUserCars(params.id)
                 .then(res => {
                     setCars(res);
-                    console.log(cars);
                 })
                 .catch();
             return;
-        }
+        } 
 
         getAllCars()
         .then(res => {
                 setCars(res.data);
-            console.log(cars);
-
             })
             .catch();
     }, [params.id, areMine]);

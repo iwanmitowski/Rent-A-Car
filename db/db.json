@@ -64,10 +64,11 @@
       "model": "Golf",
       "constructionYear": "2018-07-26T02:52:10 -03:00",
       "type": "SUV",
+      "fuelType": "Petrol",
       "seatsCount": 2,
       "pricePerDay": 113.72,
       "count": 8,
-      "ownerId": "f529a9c7-b5bb-4d3c-a451-825c03b120131"
+      "ownerId": "f529a9c7-b5bb-4d3c-a451-825c03b12013"
     },
     {
       "id": "e9b82c0f-9ea0-4cc4-a84f-a1b9992349b2",
@@ -76,11 +77,12 @@
       "brand": "Ferrari",
       "model": "C180",
       "constructionYear": "2014-06-09T07:56:33 -03:00",
-      "type": "luxury",
+      "type": "Luxury",
+      "fuelType": "Petrol",
       "seatsCount": 4,
       "pricePerDay": 670.77,
       "count": 4,
-      "ownerId": "f529a9c7-b5bb-4d3c-a451-825c03b120131"
+      "ownerId": "f529a9c7-b5bb-4d3c-a451-825c03b12013"
     },
     {
       "id": "314e4bee-a260-40dc-823a-e5e253eba2c0",
@@ -89,11 +91,24 @@
       "brand": "VW",
       "model": "C180",
       "constructionYear": "2020-05-24T05:44:04 -03:00",
-      "type": "estate",
+      "type": "Estate",
+      "fuelType": "Petrol",
       "seatsCount": 5,
       "pricePerDay": 270.11,
       "count": 3,
       "ownerId": "c5a4e854-9689-4eb0-979a-12212d838d2b"
+    },
+    {
+      "isActive": false,
+      "imageUrl": "",
+      "brand": "isEdit",
+      "model": "isEdit",
+      "constructionYear": "2004-04-04",
+      "type": "",
+      "seatsCount": "4",
+      "pricePerDay": "4",
+      "count": "4",
+      "id": "A5dDiED"
     }
   ],
   "rentals": []

@@ -37,6 +37,9 @@ export default function Header(props) {
                   <Link className="nav-link" to={mineCars}>
                     Mine cars
                   </Link>
+                  <Link className="nav-link" to="/cars/create">
+                    Create car
+                  </Link>
                 </Fragment>
               )}
               {!isLogged && (

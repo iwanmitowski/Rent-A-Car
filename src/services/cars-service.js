@@ -3,6 +3,10 @@ import { globalConstants } from "../utils/constants";
 
 const apiUrl = globalConstants.API_URL + "cars";
 
+export async function getCarById(id) {
+    return axios.get(`${apiUrl}?id=${id}`);
+}
+
 export function getCarsForUser(userId) {
     return axios.get(`${apiUrl}?ownerId=${userId}`)
 }
@@ -14,8 +18,6 @@ export async function getAllCars() {
 export async function getNonUserCars(userId) {
     let cars = (await getAllCars()).data;
     cars = cars.filter(car => car.ownerId !== userId);
-    console.log("non user cas")
-    console.log(cars)
     return cars;
 }
 

@@ -1,14 +1,31 @@
+import { useEffect, useState } from 'react';
+import { useParams } from "react-router-dom";
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { useNavigate } from "react-router-dom";
 import { getUser } from "../../../services/auth-service";
+import { getCarById } from '../../../services/cars-service';
 
 export function CarCard(props) {
-    const deleteCar = props.deleteCar;
-    const car = props.car;
-    
+    const params = useParams();
     const user = getUser();
-    const isCarOwner = user && user.id === car.ownerId;
+
+    const deleteCar = props.deleteCar;
+    let [car, setCar] = useState();
+
+    useEffect(() => {
+        if(props.isDetails) {
+            console.log(11111111111111);
+            getCarById(params.id)
+                .then(res => {
+                    setCar(res.data);
+                });
+        } else {
+            setCar(props.car);
+        }
+    }, [params.id, props.car]);
+    
+    const isCarOwner = car && user && user.id === car.ownerId;
 
     const navigate = useNavigate();
 
@@ -17,6 +34,7 @@ export function CarCard(props) {
     }
 
     return (
+        car &&
         <div className="task-card-wrapper">
             <Card style={{ width: '18rem' }}>
                 <Card.Img variant="top" src={car.imageUrl} />
@@ -29,6 +47,10 @@ export function CarCard(props) {
                     <Card.Text>
                         <span className="key">Type: </span>
                         <span className="value">{car.type}</span>
+                    </Card.Text>
+                    <Card.Text>
+                        <span className="key">Fuel Type: </span>
+                        <span className="value">{car.fuelType}</span>
                     </Card.Text>
                     <Card.Text>
                         <span className="key">Seats: </span>

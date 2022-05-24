@@ -9,3 +9,17 @@ export const authConstants = {
     MONEY_CANT_BE_NEGATIVE: "Money can't be negative number",
     FILL_REQUIRED_FIELDS: "Please fill required fields"
 }
+
+export const carTypes = {
+    ECONOMY: "Economy",
+    ESTATE: "Estate",
+    LUXURY: "Luxury",
+    SUV: "SUB",
+}
+
+export const fuelTypes = {
+    PETROL: "Petrol", 
+    DIESEL: "Diesel", 
+    HYBRID: "Hybrid",
+    ELECTRIC: "Electric",
+}
