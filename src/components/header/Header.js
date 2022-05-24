@@ -3,9 +3,16 @@ import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
 import { Link } from "react-router-dom";
 import { Fragment, useEffect } from "react";
+import { getUser } from "../../services/auth-service";
 
 export default function Header(props) {
+  // Needed to refresh the header on login
   const isLogged = props.isLogged;
+
+  const user = getUser();
+  console.log(isLogged);
+  const mineCars = isLogged ? `/cars/mine/${user.id}` : "";
+  const rentNewCars = isLogged ? `/cars/rent/${user.id}` : "";
 
   return (
     <div className="header">
@@ -19,8 +26,20 @@ export default function Header(props) {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
-              {
-                !isLogged &&
+              {isLogged && (
+                <Fragment>
+                  <Link className="nav-link" to="/cars/all">
+                    All cars
+                  </Link>
+                  <Link className="nav-link" to={rentNewCars}>
+                    Rent new car
+                  </Link>
+                  <Link className="nav-link" to={mineCars}>
+                    Mine cars
+                  </Link>
+                </Fragment>
+              )}
+              {!isLogged && (
                 <Fragment>
                   <Link className="nav-link" to="/login">
                     Login
@@ -29,16 +48,7 @@ export default function Header(props) {
                     Register
                   </Link>
                 </Fragment>
-              }
-              {
-                isLogged &&
-                <Fragment>
-                   <Link className="nav-link" to="/">
-                        Rent a car
-                    </Link>
-                </Fragment>
-              }
-             
+              )}
             </Nav>
           </Navbar.Collapse>
         </Container>

@@ -57,30 +57,6 @@
   ],
   "cars": [
     {
-      "id": "e3a36c63-1e51-4199-b02b-44255a020737",
-      "isActive": false,
-      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Lada_2107_aka_Lada_Riva_October_1995_1452cc.jpg/1200px-Lada_2107_aka_Lada_Riva_October_1995_1452cc.jpg",
-      "brand": "Lada",
-      "model": "S Class",
-      "constructionYear": "2018-12-19T11:33:41 -02:00",
-      "type": "estate",
-      "seatsCount": 5,
-      "pricePerDay": 689.66,
-      "count": 5
-    },
-    {
-      "id": "3efa5493-020a-4397-82c6-45e02229bd1e",
-      "isActive": true,
-      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f0/BMW_G11_IMG_2002.jpg",
-      "brand": "BMW",
-      "model": "C180",
-      "constructionYear": "2016-12-30T08:09:05 -02:00",
-      "type": "SUV",
-      "seatsCount": 4,
-      "pricePerDay": 232.75,
-      "count": 6
-    },
-    {
       "id": "6230608a-e4df-445b-bba5-15ed70a197fb",
       "isActive": false,
       "imageUrl": "https://www.nastarta.com/wp-content/uploads/2019/05/5b08aa21-ferrari-sf90-stradale-2.jpg",
@@ -90,7 +66,8 @@
       "type": "SUV",
       "seatsCount": 2,
       "pricePerDay": 113.72,
-      "count": 8
+      "count": 8,
+      "ownerId": "f529a9c7-b5bb-4d3c-a451-825c03b120131"
     },
     {
       "id": "e9b82c0f-9ea0-4cc4-a84f-a1b9992349b2",
@@ -102,7 +79,8 @@
       "type": "luxury",
       "seatsCount": 4,
       "pricePerDay": 670.77,
-      "count": 4
+      "count": 4,
+      "ownerId": "f529a9c7-b5bb-4d3c-a451-825c03b120131"
     },
     {
       "id": "314e4bee-a260-40dc-823a-e5e253eba2c0",
@@ -114,7 +92,8 @@
       "type": "estate",
       "seatsCount": 5,
       "pricePerDay": 270.11,
-      "count": 3
+      "count": 3,
+      "ownerId": "c5a4e854-9689-4eb0-979a-12212d838d2b"
     }
   ],
   "rentals": []

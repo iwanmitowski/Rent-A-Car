@@ -1,0 +1,8 @@
+.cars-list-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card {
+    margin: 20px;
+}
