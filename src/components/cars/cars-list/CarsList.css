@@ -1,6 +1,7 @@
 .cars-list-wrapper {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .card {

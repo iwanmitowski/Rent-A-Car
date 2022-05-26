@@ -5,6 +5,7 @@ import Card from 'react-bootstrap/Card';
 import { useNavigate } from "react-router-dom";
 import { getUser } from "../../../services/auth-service";
 import { getCarById } from '../../../services/cars-service';
+import './CarCard.css';
 
 export function CarCard(props) {
     const params = useParams();

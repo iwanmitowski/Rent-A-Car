@@ -4,6 +4,7 @@ import { Button } from "react-bootstrap";
 import { useNavigate, useParams } from "react-router-dom";
 import { createCar, editCar, getCarById } from "../../../services/cars-service";
 import { carTypes, fuelTypes } from "../../../utils/constants";
+import './CarForm.css'
 
 export function CarForm(props) {
     const params = useParams();
@@ -64,7 +65,7 @@ export function CarForm(props) {
     }
 
     return (
-    <div className="user-form-wrapper">
+    <div className="car-form-wrapper">
             <Form onSubmit={onFormSubmit}>
             {error && <span className="text-danger">{error}</span>}
             <Form.Group className="mb-3" controlId="name">
