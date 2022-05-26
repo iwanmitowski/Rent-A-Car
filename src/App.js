@@ -11,6 +11,7 @@ import { CarsList } from "./components/cars/cars-list/CarsList";
 import { getUser } from "./services/auth-service";
 import { CarForm } from "./components/cars/car-form/CarForm";
 import { CarCard } from "./components/cars/car-card/CarCard";
+import { UserForm } from "./components/users/user-form/UserForm";
 
 function App() {
   const [isLogged, setIsLogged] = useState(!!getUser());
@@ -26,6 +27,7 @@ function App() {
           <Route path="/cars/create" element={<AuthenticatedGuard><CarForm /></AuthenticatedGuard>} />
           <Route path="/car/edit/:id" element={<AuthenticatedGuard><CarForm /></AuthenticatedGuard>} />
           <Route path="/car/:id" element={<AuthenticatedGuard><CarsList isDetails/></AuthenticatedGuard>} />
+          <Route path="/user/:id" element={<UserForm />} />
           <Route exact path="/login" element={<NonAuthenticatedGuard><Login setIsLogged={setIsLogged}/></NonAuthenticatedGuard>} />
           <Route exact path="/register" element={<NonAuthenticatedGuard><Register setIsLogged={setIsLogged}/></NonAuthenticatedGuard>} />
         </Route>

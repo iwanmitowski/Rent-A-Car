@@ -2,57 +2,63 @@
   "users": [
     {
       "id": "f529a9c7-b5bb-4d3c-a451-825c03b12013",
+      "isActive": true,
       "imageUrl": "https://picsum.photos/200/300?random=1",
-      "name": "Kelly Johns",
+      "name": "Kelly Johnsd",
       "email": "a@a.a",
       "password": "a@a.a",
-      "phone": "+1 (977) 521-3716",
+      "phone": "+1 (977) 521-4",
       "isVip": false,
-      "money": 5000
+      "money": "1234",
+      "isAdmin": true
     },
     {
       "id": "c3cd55ff-03e8-4e06-b4ee-fab89847958c",
-      "isActive": false,
+      "isActive": true,
       "imageUrl": "https://picsum.photos/200/300?random=2",
       "name": "Tami Carlson",
       "email": "tamicarlson@caxt.com",
       "password": "a@a.a",
       "phone": "+1 (988) 494-2020",
       "isVip": false,
-      "money": 510
+      "money": 510,
+      "isAdmin": false
     },
     {
       "id": "c5a4e854-9689-4eb0-979a-12212d838d2b",
-      "isActive": false,
+      "isActive": true,
       "imageUrl": "https://picsum.photos/200/300?random=3",
       "name": "Rosemarie Schneider",
       "email": "rosemarieschneider@caxt.com",
       "password": "a@a.a",
       "phone": "+1 (942) 477-2273",
       "isVip": false,
-      "money": 420
+      "money": 420,
+      "isAdmin": false
     },
     {
       "id": "70ad681a-75b0-4f05-8f80-cd5f36de57df",
-      "isActive": false,
+      "isActive": true,
       "imageUrl": "https://picsum.photos/200/300?random=4",
       "name": "Silva Patton",
       "email": "silvapatton@caxt.com",
       "password": "a@a.a",
       "phone": "+1 (941) 545-2163",
       "isVip": false,
-      "money": 689.66
+      "money": 689.66,
+      "isAdmin": false
     },
     {
       "id": "7cb88485-534b-4f61-a8e3-07a7fa3bd47f",
-      "isActive": false,
+      "isActive": true,
       "imageUrl": "https://picsum.photos/200/300?random=5",
       "name": "Bertha Gray",
       "email": "berthagray@caxt.com",
       "password": "a@a.a",
       "phone": "+1 (861) 443-2680",
       "isVip": false,
-      "money": 1000
+      "money": 1000,
+      "isAdmin": false
     }
   ],
   "cars": [
@@ -65,7 +71,7 @@
       "constructionYear": "2018-07-26T02:52:10 -03:00",
       "type": "SUV",
       "fuelType": "Petrol",
-      "seatsCount": 2,
+      "seatsCount": "23",
       "pricePerDay": 113.72,
       "count": 8,
       "ownerId": "f529a9c7-b5bb-4d3c-a451-825c03b12013"

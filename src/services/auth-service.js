@@ -65,6 +65,10 @@ export function getUser() {
   return JSON.parse(localStorage.getItem("loggedUser"));
 }
 
+export function isAdmin() {
+  return getUser().isAdmin;
+}
+
 function setUser(user) {
   localStorage.setItem("loggedUser", JSON.stringify(user));
 }

@@ -10,9 +10,9 @@ export default function Header(props) {
   const isLogged = props.isLogged;
 
   const user = getUser();
-  console.log(isLogged);
   const mineCars = isLogged ? `/cars/mine/${user.id}` : "";
   const rentNewCars = isLogged ? `/cars/rent/${user.id}` : "";
+  const editUser = isLogged ? `user/${user.id}` : "";
 
   return (
     <div className="header">
@@ -39,6 +39,9 @@ export default function Header(props) {
                   </Link>
                   <Link className="nav-link" to="/cars/create">
                     Create car
+                  </Link>
+                  <Link className="nav-link" to={editUser}>
+                    {user.name}
                   </Link>
                 </Fragment>
               )}
