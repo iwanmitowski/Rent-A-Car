@@ -10,10 +10,10 @@ export function UserForm(props) {
   const params = useParams();
   const navigate = useNavigate();
 
-  const isEdit = !!params.id;
   const isCurrentUserAdmin = isAdmin();
   const currentUserId = getUser().id;
-
+  const isEdit = params.id === currentUserId;
+  
   const [error, setError] = useState("");
   const [user, setUser] = useState({
     imageUrl: "",
@@ -35,7 +35,7 @@ export function UserForm(props) {
     getUserById(params.id).then((res) => {
       setUser(res.data[0]);
     });
-  }, [params.id, isEdit, user.isActive]);
+  }, [params.id, isEdit, user.isActive, navigate]);
 
   const onInputChange = (e) => {
     setUser((prevState) => {
@@ -56,7 +56,7 @@ export function UserForm(props) {
 
     editUser(user)
       .then(() => {
-        setUser({...user, confirmPassword: ""});
+        setUser({ ...user, confirmPassword: "" });
       })
       .catch((error) => {
         setError(error.message);
@@ -76,6 +76,8 @@ export function UserForm(props) {
         setError(error.message);
       });
   };
+
+  const backToUsers = () => navigate("/users");
 
   return (
     <div className="car-form-wrapper">
@@ -123,8 +125,7 @@ export function UserForm(props) {
             required
           />
         </Form.Group>
-        {
-          currentUserId === params.id &&
+        {currentUserId === params.id && (
           <Fragment>
             <Form.Group className="mb-3" controlId="password">
               <Form.Label>Password</Form.Label>
@@ -149,7 +150,7 @@ export function UserForm(props) {
               />
             </Form.Group>
           </Fragment>
-        }
+        )}
         {(isEdit || isCurrentUserAdmin) && (
           <Button variant="primary" type="submit">
             Edit
@@ -160,6 +161,11 @@ export function UserForm(props) {
             {user.isActive ? "Deactivate" : "Activate"} user
           </Button>
         )}
+        {
+          <Button variant="info" onClick={backToUsers}>
+            Back To Users
+          </Button>
+        }
       </Form>
     </div>
   );

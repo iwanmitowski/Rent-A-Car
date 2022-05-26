@@ -16,7 +16,6 @@ export function CarCard(props) {
 
     useEffect(() => {
         if(props.isDetails) {
-            console.log(11111111111111);
             getCarById(params.id)
                 .then(res => {
                     setCar(res.data);
@@ -24,7 +23,7 @@ export function CarCard(props) {
         } else {
             setCar(props.car);
         }
-    }, [params.id, props.car]);
+    }, [params.id, props.car, props.isDetails]);
     
     const isCarOwner = car && user && user.id === car.ownerId;
 

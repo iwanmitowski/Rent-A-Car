@@ -33,3 +33,11 @@ export async function editUser(user) {
 export async function getUserById(id) {
     return axios.get(`${apiUrl}?id=${id}`);
 }
+
+export async function deleteUser(id) {
+    return axios.delete(`${apiUrl}/${id}`);
+}
+
+export function getAllUsers() {
+    return axios.get(`${apiUrl}`);
+}

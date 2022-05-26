@@ -59,6 +59,16 @@
       "isVip": false,
       "money": 1000,
       "isAdmin": false
+    },
+    {
+      "imageUrl": " https://picsum.photos/200/300?random=0.796556609242159",
+      "name": "t",
+      "email": "test@test.test",
+      "phone": "test@test.test",
+      "password": "test@test.test",
+      "isVip": false,
+      "money": "123",
+      "id": "3NZDb6-"
     }
   ],
   "cars": [

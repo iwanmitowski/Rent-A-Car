@@ -2,7 +2,7 @@ import Navbar from "react-bootstrap/NavBar";
 import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
 import { Link } from "react-router-dom";
-import { Fragment, useEffect } from "react";
+import { Fragment } from "react";
 import { getUser } from "../../services/auth-service";
 
 export default function Header(props) {
@@ -42,6 +42,9 @@ export default function Header(props) {
                   </Link>
                   <Link className="nav-link" to={editUser}>
                     {user.name}
+                  </Link>
+                  <Link className="nav-link" to="/users">
+                    Users
                   </Link>
                 </Fragment>
               )}
