@@ -48,7 +48,7 @@ export function CarsList(props) {
 
         getAllCars()
         .then(res => {
-                setCars(res.data);
+                setCars(res);
             })
             .catch();
     }, [params.id, areMine]);

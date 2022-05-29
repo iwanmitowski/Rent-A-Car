@@ -13,12 +13,18 @@ export function getCarsForUser(userId) {
     return axios.get(`${apiUrl}?ownerId=${userId}`)
 }
 
-export async function getAllCars() {
-    return axios.get(apiUrl);
+export async function getAllCars(isRent) {
+    let cars = (await axios.get(apiUrl)).data;
+
+    if(!isRent){
+        cars = cars.filter(c => c.count > 0);
+    }
+
+    return cars;
 }
 
 export async function getNonUserCars(userId) {
-    let cars = (await getAllCars()).data;
+    let cars = await getAllCars();
     cars = cars.filter(car => car.ownerId !== userId);
     return cars;
 }
@@ -38,7 +44,7 @@ export async function deleteCar(id)  {
 }
 
 export async function getRentedCarsForUser(id) {
-    let cars = (await getAllCars()).data;
+    let cars = await getAllCars(true);
     let rentals = (await getUserRentals(id)).data;
 
     let currentlyRentedCars = [];

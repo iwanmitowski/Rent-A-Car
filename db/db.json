@@ -76,7 +76,7 @@
       "email": "b@b.b",
       "phone": "1234567899",
       "isVip": false,
-      "money": 99728.89,
+      "money": 99899,
       "id": "8G1qQfP"
     }
   ],
@@ -92,7 +92,7 @@
       "fuelType": "Petrol",
       "seatsCount": "23",
       "pricePerDay": 100,
-      "count": 2,
+      "count": 0,
       "ownerId": "f529a9c7-b5bb-4d3c-a451-825c03b12013",
       "carInfo": "Ferrari - Golf"
     },
@@ -210,6 +210,24 @@
       "status": "In use",
       "totalCost": 270.11,
       "id": "hfTT6_Z"
+    },
+    {
+      "userId": "8G1qQfP",
+      "carId": "6230608a-e4df-445b-bba5-15ed70a197fb",
+      "startDate": "2022-05-29",
+      "endDate": "2022-05-29",
+      "status": "In use",
+      "totalCost": 100,
+      "id": "mzxJBdE"
+    },
+    {
+      "userId": "8G1qQfP",
+      "carId": "6230608a-e4df-445b-bba5-15ed70a197fb",
+      "startDate": "2022-06-05",
+      "endDate": "2022-06-05",
+      "status": "In use",
+      "totalCost": 100,
+      "id": "IST3-hG"
     }
   ]
 }
