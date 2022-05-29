@@ -14,7 +14,9 @@ export function createUser(user) {
 }
 
 export async function editUser(user, isVip) {
-    if (!isVip) {
+    if (isVip) {
+        return axios.patch(`${apiUrl}/${user.id}`, user);
+    } else {
         if (!user.password || !user.name) {
             throw new Error(authConstants.FILL_REQUIRED_FIELDS);
         }
@@ -27,11 +29,11 @@ export async function editUser(user, isVip) {
         if (!user.imageUrl) {
             user.imageUrl = ` https://picsum.photos/200/300?random=${Math.random()}`;
         }
+
+        Reflect.deleteProperty(user, "confirmPassword");
+    
+        return axios.put(`${apiUrl}/${user.id}`, user);
     }
-    
-    Reflect.deleteProperty(user, "confirmPassword");
-    
-    return axios.put(`${apiUrl}/${user.id}`, user);
 }
 
 export async function getUserById(id) {
