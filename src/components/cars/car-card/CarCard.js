@@ -33,6 +33,10 @@ export function CarCard(props) {
         navigate(`/car/edit/${car.id}`);
     }
 
+    const toRent = () => {
+        navigate(`/rent/${car.id}`);
+    }
+
     return (
         car &&
         <div className="task-card-wrapper">
@@ -75,7 +79,7 @@ export function CarCard(props) {
                         }
                         {
                             !isCarOwner &&
-                            <Button variant="warning" >Rent</Button>
+                            <Button variant="warning" onClick={toRent} >Rent</Button>
                         }
                     </div>
                 </Card.Body>

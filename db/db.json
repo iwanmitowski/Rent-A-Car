@@ -127,5 +127,13 @@
       "id": "A5dDiED"
     }
   ],
-  "rentals": []
+  "rentals": [
+    {
+      "userId": "f529a9c7-b5bb-4d3c-a451-825c03b12013",
+      "carId": "A5dDiED",
+      "startDate": "",
+      "endDate": "",
+      "status": "Returned"
+    }
+  ]
 }
