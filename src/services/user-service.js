@@ -1,7 +1,7 @@
 import axios from "axios";
 import { authConstants, globalConstants } from "../utils/constants";
 import { get30DaysBeforeToday, stringToDate, today } from "./days-service";
-import { getUserRentals } from "./rentals-service";
+import { getAllRentals, getUserRentals } from "./rentals-service";
 
 const apiUrl = globalConstants.API_URL + 'users';
 
@@ -44,8 +44,18 @@ export async function deleteUser(id) {
     return axios.delete(`${apiUrl}/${id}`);
 }
 
-export function getAllUsers() {
-    return axios.get(`${apiUrl}`);
+export async function getAllUsers() {
+    let rentals = (await getAllRentals()).data;
+
+    let users = (await axios.get(`${apiUrl}`)).data;
+
+    users.forEach(u => {
+        let rentalsCount = rentals.filter(r => r.userId === u.id).length;
+
+        u.rentalsCount = rentalsCount;
+    })
+
+    return users;
 }
 
 export async function vipConditionCheck(user) {

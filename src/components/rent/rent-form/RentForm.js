@@ -6,7 +6,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { getUser } from "../../../services/auth-service";
 import { getCarById } from "../../../services/cars-service";
 import { areValidDates, daysDiff } from "../../../services/days-service";
-import { createRent, getUserRentals } from "../../../services/rentals-service";
+import { createRent } from "../../../services/rentals-service";
 import { rentalStatus } from "../../../utils/constants";
 import "./RentForm.css";
 

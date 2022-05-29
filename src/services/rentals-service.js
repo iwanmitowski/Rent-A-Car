@@ -10,6 +10,10 @@ export async function getUserRentals(userId) {
   return axios.get(`${apiUrl}?userId=${userId}`);
 }
 
+export async function getAllRentals() {
+    return axios.get(apiUrl);
+}
+
 export async function createRent(rent, user, car) {
   const validDates = areValidDates(rent.startDate, rent.endDate);
 

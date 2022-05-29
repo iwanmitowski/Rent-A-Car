@@ -9,7 +9,7 @@ export function UsersList() {
     useEffect(() => {
         getAllUsers()
             .then(res => {
-                setUsers(res.data)
+                setUsers(res);
             })
             .catch();
     }, []);
