@@ -1,6 +1,6 @@
 import axios from "axios";
 import { authConstants, globalConstants } from "../utils/constants";
-import { createUser } from "./user-service";
+import { createUser, vipConditionCheck } from "./user-service";
 
 const apiUrl = globalConstants.API_URL + "users";
 
@@ -56,6 +56,7 @@ export async function loginUser(user) {
 
   Reflect.deleteProperty(existingUser, "password");
 
+  await vipConditionCheck(existingUser);
   setUser(existingUser);
 
   return existingUser[0];

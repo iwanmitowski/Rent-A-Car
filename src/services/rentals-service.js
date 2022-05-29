@@ -1,24 +1,34 @@
 import axios from "axios";
 import { globalConstants, rentConstants } from "../utils/constants";
+import { editCar } from "./cars-service";
 import { areValidDates } from "./days-service";
+import { vipConditionCheck } from "./user-service";
 
 const apiUrl = globalConstants.API_URL + "rentals";
 
-export function getUserRentals(userId) {
-    return axios.get(`${apiUrl}?userId=${userId}`);
+export async function getUserRentals(userId) {
+  return axios.get(`${apiUrl}?userId=${userId}`);
 }
 
-export function createRent(rent, user, rentals) {
-    const validDates = areValidDates(rent.startDate, rent.endDate);
+export async function createRent(rent, user, car) {
+  const validDates = areValidDates(rent.startDate, rent.endDate);
 
-    if (!validDates) {
-        throw new Error(rentConstants.START_DATE_CANT_BE_AFTER_END_DATE);
-    }
+  if (!validDates) {
+    throw new Error(rentConstants.START_DATE_CANT_BE_AFTER_END_DATE);
+  }
+  if (user.money < rent.totalCost) {
+    throw new Error(rentConstants.NOT_ENOUGH_MONEY);
+  }
+  if (car.count === 0) {
+    throw new Error(rentConstants.THE_CAR_IS_NOT_AVAILABLE);
+  }
 
-    //da proveri parite na usera,
-    // 
+  user.money -= rent.totalCost;
+  await vipConditionCheck(user);
 
+  car.count--;
+  await editCar(car);
 
-    // da splitna metoda na chasti
-    return axios.post(`${apiUrl}`, rent);
+  return axios.post(`${apiUrl}`, rent);
 }
+

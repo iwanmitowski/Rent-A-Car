@@ -16,7 +16,6 @@ export function RentForm() {
 
   const [car, setCar] = useState({});
   const [user] = useState(getUser());
-  const [rentals] = useState(getUserRentals(user.id));
   const [error, setError] = useState("");
   const [rent, setRent] = useState({
     userId: user.id,
@@ -114,7 +113,7 @@ export function RentForm() {
   const onFormSubmit = (e) => {
     e.preventDefault();
 
-    createRent(rent, rentals)
+    createRent(rent, user, car)
       .then((res) => {
         navigate(`/user/rentals/${user.id}`);
       })
