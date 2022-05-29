@@ -1,5 +1,7 @@
 import axios from "axios";
 import { globalConstants } from "../utils/constants";
+import { stringToDate, today } from "./days-service";
+import { getUserRentals } from "./rentals-service";
 
 const apiUrl = globalConstants.API_URL + "cars";
 
@@ -33,4 +35,31 @@ export function editCar(car) {
 
 export async function deleteCar(id)  {
     return axios.delete(`${apiUrl}/${id}`);
+}
+
+export async function getRentedCarsForUser(id) {
+    let cars = (await getAllCars()).data;
+    let rentals = (await getUserRentals(id)).data;
+
+    let currentlyRentedCars = [];
+    
+    rentals.forEach(rental => {
+        let currentCar = cars.find(c => c.id === rental.carId);
+        
+        currentlyRentedCars.push({
+            ...currentCar,
+            rentalId: rental.id,
+            rentalStartDate: rental.startDate,
+            rentalEndDate: rental.endDate,
+            rentalPrice: rental.totalCost,
+            rentalOverDue: stringToDate(rental.endDate) <= stringToDate(today().toDateString())
+        });
+
+    });
+
+    currentlyRentedCars.sort((c1, c2) => {
+        return stringToDate(c1.rentalEndDate) - stringToDate(c2.rentalEndDate);
+    } );
+
+    return currentlyRentedCars;
 }

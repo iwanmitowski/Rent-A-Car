@@ -22,7 +22,7 @@ function App() {
       <Routes>
         <Route exact path="/" element={<Layout isLogged={isLogged} />}>
           <Route path="/" element={<Home />} />
-          <Route path="/cars/all" element={<CarsList/>}/>
+          <Route path="/cars/all" element={<CarsList />}/>
           <Route path="/cars/mine/:id" element={<AuthenticatedGuard><CarsList areMine/></AuthenticatedGuard>}/>
           <Route path="/cars/rent/:id" element={<AuthenticatedGuard><CarsList areMine={false}/></AuthenticatedGuard>}/>
           <Route path="/cars/create" element={<AuthenticatedGuard><CarForm /></AuthenticatedGuard>} />
@@ -31,6 +31,7 @@ function App() {
           <Route path="/rent/:id" element={<AuthenticatedGuard><RentForm/></AuthenticatedGuard>} />
           <Route path="/user/:id" element={<UserForm />} />
           <Route path="/users" element={<UsersList />} />
+          <Route path="/user/rentals/:id" element={<CarsList areRented/>} />
           <Route exact path="/login" element={<NonAuthenticatedGuard><Login setIsLogged={setIsLogged}/></NonAuthenticatedGuard>} />
           <Route exact path="/register" element={<NonAuthenticatedGuard><Register setIsLogged={setIsLogged}/></NonAuthenticatedGuard>} />
         </Route>

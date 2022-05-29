@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { deleteCar, getAllCars, getCarById, getCarsForUser, getNonUserCars } from "../../../services/cars-service";
+import { deleteCar, getAllCars, getCarById, getCarsForUser, getNonUserCars, getRentedCarsForUser } from "../../../services/cars-service";
 import { CarCard } from "../car-card/CarCard";
 import './CarsList.css';
 
@@ -10,6 +10,7 @@ export function CarsList(props) {
 
     const areMine = props.areMine;
     const isDetails = props.isDetails;
+    const areRented = props.areRented;
 
     useEffect(() => {
         if (isDetails) {
@@ -19,6 +20,14 @@ export function CarsList(props) {
                 })
                 .catch();
             
+            return;
+        } else if (params.id && areRented) {
+            getRentedCarsForUser(params.id)
+                .then(res => {
+                    setCars(res);
+                })
+                .catch();
+
             return;
         } else if(params.id && areMine) {
             getCarsForUser(params.id)
@@ -56,7 +65,7 @@ export function CarsList(props) {
             {
                 cars.map(car => {
                     return <CarCard 
-                        key={car.id}
+                        key={car.rentalId || car.id}
                         car={car}
                         deleteCar={deleteCarById}
                     />

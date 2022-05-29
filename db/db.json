@@ -65,7 +65,7 @@
       "name": "test@test.test",
       "email": "test@test.test",
       "phone": "test@test.test",
-      "password" : "test@test.test",
+      "password": "test@test.test",
       "isVip": false,
       "money": 9999,
       "id": "3NZDb6-"
@@ -76,7 +76,7 @@
       "email": "b@b.b",
       "phone": "1234567899",
       "isVip": false,
-      "money": 99899,
+      "money": 99728.89,
       "id": "8G1qQfP"
     }
   ],
@@ -92,7 +92,7 @@
       "fuelType": "Petrol",
       "seatsCount": "23",
       "pricePerDay": 100,
-      "count": 5,
+      "count": 2,
       "ownerId": "f529a9c7-b5bb-4d3c-a451-825c03b12013",
       "carInfo": "Ferrari - Golf"
     },
@@ -121,8 +121,9 @@
       "fuelType": "Petrol",
       "seatsCount": 5,
       "pricePerDay": 270.11,
-      "count": 3,
-      "ownerId": "c5a4e854-9689-4eb0-979a-12212d838d2b"
+      "count": 2,
+      "ownerId": "c5a4e854-9689-4eb0-979a-12212d838d2b",
+      "carInfo": "VW - C180"
     },
     {
       "isActive": false,
@@ -173,6 +174,42 @@
       "status": "In use",
       "totalCost": 100,
       "id": "T5RAXzT"
+    },
+    {
+      "userId": "8G1qQfP",
+      "carId": "6230608a-e4df-445b-bba5-15ed70a197fb",
+      "startDate": "2022-05-29",
+      "endDate": "2022-05-29",
+      "status": "In use",
+      "totalCost": 100,
+      "id": "Rizyy8E"
+    },
+    {
+      "userId": "8G1qQfP",
+      "carId": "6230608a-e4df-445b-bba5-15ed70a197fb",
+      "startDate": "2022-05-27",
+      "endDate": "2022-05-28",
+      "status": "In use",
+      "totalCost": 100,
+      "id": "ixqsCgS"
+    },
+    {
+      "userId": "8G1qQfP",
+      "carId": "6230608a-e4df-445b-bba5-15ed70a197fb",
+      "startDate": "2022-06-05",
+      "endDate": "2022-06-07",
+      "status": "In use",
+      "totalCost": 300,
+      "id": "xisEeRV"
+    },
+    {
+      "userId": "8G1qQfP",
+      "carId": "314e4bee-a260-40dc-823a-e5e253eba2c0",
+      "startDate": "2022-05-29",
+      "endDate": "2022-05-29",
+      "status": "In use",
+      "totalCost": 270.11,
+      "id": "hfTT6_Z"
     }
   ]
 }

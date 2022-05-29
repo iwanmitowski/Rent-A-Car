@@ -25,8 +25,8 @@ export default function UserCard(props) {
       <Card.Body>
         <Card.Title>{user.name}</Card.Title>
         <Card.Text>
-          <span className="key">Rentals count: </span>
-          <span className="value">{user.rentalsCount}</span>
+          <span className="key">Rentals: </span>
+          <span className="value">{user.address}</span>
         </Card.Text>
         <Card.Text>
           <span className="key">Email: </span>

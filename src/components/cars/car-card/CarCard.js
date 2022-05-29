@@ -13,6 +13,7 @@ export function CarCard(props) {
 
     const deleteCar = props.deleteCar;
     let [car, setCar] = useState();
+    let [isRented,setIsRented] = useState(false);
 
     useEffect(() => {
         if(props.isDetails) {
@@ -22,6 +23,7 @@ export function CarCard(props) {
                 });
         } else {
             setCar(props.car);
+            setIsRented(!!props.car.rentalId);
         }
     }, [params.id, props.car, props.isDetails]);
     
@@ -60,10 +62,34 @@ export function CarCard(props) {
                         <span className="key">Seats: </span>
                         <span className="value">{car.seatsCount}</span>
                     </Card.Text>
-                    <Card.Text>
-                        <span className="key">Available count: </span>
-                        <span className="value">{car.count}</span>
-                    </Card.Text>
+                    {
+                        !isRented &&
+                        <Card.Text>
+                            <span className="key">Available count: </span>
+                            <span className="value">{car.count}</span>
+                        </Card.Text>
+                    }
+                    {
+                        isRented &&
+                        <Card.Text>
+                            <span className="key">Rental start date: </span>
+                            <span className="value">{car.rentalStartDate}</span>
+                        </Card.Text>
+                    }
+                    {
+                        isRented &&
+                        <Card.Text>
+                            <span className="key">Rental end date: </span>
+                            <span className="value" style={{color: car.rentalOverDue ? 'red' : ''}}>{car.rentalEndDate}</span>
+                        </Card.Text>
+                    }
+                     {
+                        isRented &&
+                        <Card.Text>
+                            <span className="key">Paid price: </span>
+                            <span className="value">{car.rentalPrice}</span>
+                        </Card.Text>
+                    }
                     <Card.Text>
                         <span className="key">Price per day: </span>
                         <span className="value">{car.pricePerDay}</span>
@@ -78,8 +104,12 @@ export function CarCard(props) {
                             <Button variant="danger" onClick={() => deleteCar(car.id)}>Delete</Button>
                         }
                         {
-                            !isCarOwner &&
+                            !isCarOwner && !isRented &&
                             <Button variant="warning" onClick={toRent} >Rent</Button>
+                        }
+                        {
+                            isRented &&
+                            <Button variant={car.rentalOverDue ? "danger" : "warning"} onClick={toRent} >Return</Button>
                         }
                     </div>
                 </Card.Body>

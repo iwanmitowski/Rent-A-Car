@@ -12,7 +12,8 @@ export default function Header(props) {
   const user = getUser();
   const mineCars = isLogged ? `/cars/mine/${user.id}` : "";
   const rentNewCars = isLogged ? `/cars/rent/${user.id}` : "";
-  const editUser = isLogged ? `user/${user.id}` : "";
+  const editUser = isLogged ? `/user/${user.id}` : "";
+  const userRentals = isLogged ? `/user/rentals/${user.id}` : "";
 
   return (
     <div className="header">
@@ -33,6 +34,9 @@ export default function Header(props) {
                   </Link>
                   <Link className="nav-link" to={rentNewCars}>
                     Rent new car
+                  </Link>
+                  <Link className="nav-link" to={userRentals}>
+                    My rentals
                   </Link>
                   <Link className="nav-link" to={mineCars}>
                     Mine cars
