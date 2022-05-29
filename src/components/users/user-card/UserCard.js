@@ -20,13 +20,13 @@ export default function UserCard(props) {
   }
 
   return (
-    <Card style={{ width: "18rem" }}>
-      <Card.Img variant="top" src={user.imageUrl} />
+    <Card style={{ width: "18rem", border: user.isVip ? "5px solid #FFC107" : "" }}>
+      <Card.Img variant="top" src={user.imageUrl} style={{borderBottom: user.isVip ? "5px solid #FFC107" : "" }} />
       <Card.Body>
         <Card.Title>{user.name}</Card.Title>
         <Card.Text>
           <span className="key">Rentals: </span>
-          <span className="value">{user.address}</span>
+          <span className="value">{user.rentalsCount}</span>
         </Card.Text>
         <Card.Text>
           <span className="key">Email: </span>

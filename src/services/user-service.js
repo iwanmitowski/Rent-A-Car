@@ -50,10 +50,11 @@ export async function getAllUsers() {
     let users = (await axios.get(`${apiUrl}`)).data;
 
     users.forEach(u => {
+        vipConditionCheck(u);
         let rentalsCount = rentals.filter(r => r.userId === u.id).length;
 
         u.rentalsCount = rentalsCount;
-    })
+    });
 
     return users;
 }
@@ -72,6 +73,8 @@ export async function vipConditionCheck(user) {
   } else {
       user.isVip = false;
   }
+
+  Reflect.deleteProperty(user, "rentalsCount");
 
   // To skip password validation
   await editUser(user, true);
