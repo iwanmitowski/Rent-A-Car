@@ -1,5 +1,6 @@
 import axios from "axios";
 import { globalConstants, rentConstants } from "../utils/constants";
+import { areValidDates } from "./days-service";
 
 const apiUrl = globalConstants.API_URL + "rentals";
 
@@ -8,10 +9,9 @@ export function getUserRentals(userId) {
 }
 
 export function createRent(rent, user, rentals) {
-    var startDate = new Date(rent.startDate).getDate();
-    var endDate = new Date(rent.endDate).getDate();
+    const validDates = areValidDates(rent.startDate, rent.endDate);
 
-    if (startDate > endDate) {
+    if (!validDates) {
         throw new Error(rentConstants.START_DATE_CANT_BE_AFTER_END_DATE);
     }
 
