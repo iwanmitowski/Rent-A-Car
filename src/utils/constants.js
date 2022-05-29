@@ -14,6 +14,7 @@ export const rentConstants = {
     START_DATE_CANT_BE_AFTER_END_DATE: "Start date can't be after end date",
     NOT_ENOUGH_MONEY: "You don't have enough money to rent that car",
     THE_CAR_IS_NOT_AVAILABLE: "No cars of that model in the garage",
+    CONFIRM_TO_RETURN_CAR: "Are you sure you want to return ",
 }
 
 export const carTypes = {

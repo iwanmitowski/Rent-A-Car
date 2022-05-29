@@ -14,8 +14,6 @@ export function createUser(user) {
 }
 
 export async function editUser(user, isVip) {
-    debugger;
-
     if (!isVip) {
         if (!user.password || !user.name) {
             throw new Error(authConstants.FILL_REQUIRED_FIELDS);
@@ -61,12 +59,11 @@ export async function getAllUsers() {
 
 export async function vipConditionCheck(user) {
   const rentals = (await getUserRentals(user.id)).data;
-
   const rentalsBefore30DaysStartDate = get30DaysBeforeToday();
 
   const rentalsLast30Days = rentals.filter(
     (r) => stringToDate(r.startDate) >= rentalsBefore30DaysStartDate && stringToDate(r.startDate) <= today()
-  ) + 1;
+  ).length + 1;
 
   if (rentalsLast30Days > 3) {
       user.isVip = true;

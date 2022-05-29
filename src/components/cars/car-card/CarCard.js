@@ -5,12 +5,14 @@ import Card from 'react-bootstrap/Card';
 import { useNavigate } from "react-router-dom";
 import { getUser } from "../../../services/auth-service";
 import { getCarById } from '../../../services/cars-service';
+import { rentConstants } from '../../../utils/constants';
 import './CarCard.css';
 
 export function CarCard(props) {
     const params = useParams();
     const user = getUser();
 
+    const returnCar = props.returnCar;
     const deleteCar = props.deleteCar;
     let [car, setCar] = useState();
     let [isRented,setIsRented] = useState(false);
@@ -37,6 +39,12 @@ export function CarCard(props) {
 
     const toRent = () => {
         navigate(`/rent/${car.id}`);
+    }
+
+    const returnCurrentCar = async () => {
+        if (window.confirm(rentConstants.CONFIRM_TO_RETURN_CAR + car.brand + " - " + car.model)) {
+            await returnCar(car.rentalId);
+        }
     }
 
     return (
@@ -109,7 +117,7 @@ export function CarCard(props) {
                         }
                         {
                             isRented &&
-                            <Button variant={car.rentalOverDue ? "danger" : "warning"} onClick={toRent} >Return</Button>
+                            <Button variant={car.rentalOverDue ? "danger" : "warning"} onClick={returnCurrentCar} >Return</Button>
                         }
                     </div>
                 </Card.Body>

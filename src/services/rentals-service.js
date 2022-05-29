@@ -1,6 +1,6 @@
 import axios from "axios";
-import { globalConstants, rentConstants } from "../utils/constants";
-import { editCar } from "./cars-service";
+import { globalConstants, rentalStatus, rentConstants } from "../utils/constants";
+import { editCar, getCarById } from "./cars-service";
 import { areValidDates } from "./days-service";
 import { vipConditionCheck } from "./user-service";
 
@@ -36,3 +36,23 @@ export async function createRent(rent, user, car) {
   return axios.post(`${apiUrl}`, rent);
 }
 
+export async function editRent(rent) {
+    return axios.put(`${apiUrl}/${rent.id}`, rent);
+}
+
+export async function getRentById(id) {
+    return axios.get(`${apiUrl}/${id}`)
+}
+
+export async function returnCar(rentId) {
+    let rent = (await getRentById(rentId)).data;
+
+    let car = (await getCarById(rent.carId)).data[0];
+    car.count++;
+    await editCar(car);
+
+    rent.status = rentalStatus.RETURNED;
+    await editRent(rent);
+
+    return car.id;
+}

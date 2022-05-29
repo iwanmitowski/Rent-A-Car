@@ -43,9 +43,11 @@ export async function deleteCar(id)  {
     return axios.delete(`${apiUrl}/${id}`);
 }
 
-export async function getRentedCarsForUser(id) {
+export async function getRentedCarsForUser(id, status) {
     let cars = await getAllCars(true);
     let rentals = (await getUserRentals(id)).data;
+
+    rentals = rentals.filter(r => r.status === status);
 
     let currentlyRentedCars = [];
     

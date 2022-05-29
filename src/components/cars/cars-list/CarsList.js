@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { deleteCar, getAllCars, getCarById, getCarsForUser, getNonUserCars, getRentedCarsForUser } from "../../../services/cars-service";
+import { returnCar } from "../../../services/rentals-service";
+import { rentalStatus } from "../../../utils/constants";
 import { CarCard } from "../car-card/CarCard";
 import './CarsList.css';
 
@@ -22,7 +24,7 @@ export function CarsList(props) {
             
             return;
         } else if (params.id && areRented) {
-            getRentedCarsForUser(params.id)
+            getRentedCarsForUser(params.id, rentalStatus.IN_USE)
                 .then(res => {
                     setCars(res);
                 })
@@ -59,6 +61,15 @@ export function CarsList(props) {
             return prevState.filter(car => car.id !== id);
         });
     }
+    
+    const returnCurrentCar = async (rentId) => {
+        await returnCar(rentId)
+        getRentedCarsForUser(params.id, rentalStatus.IN_USE)
+                .then(res => {
+                    setCars(res);
+                })
+                .catch();
+    }
 
     return (
         <div className="cars-list-wrapper">
@@ -68,6 +79,7 @@ export function CarsList(props) {
                         key={car.rentalId || car.id}
                         car={car}
                         deleteCar={deleteCarById}
+                        returnCar={returnCurrentCar}
                     />
                 })
             }
