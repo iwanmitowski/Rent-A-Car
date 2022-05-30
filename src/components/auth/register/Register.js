@@ -26,7 +26,7 @@ export function Register(props) {
     setUser((prevState) => {
       let currentName = e.target.name;
       let currentValue = e.target.value;
-      console.log(user);
+
       return {
         ...prevState,
         [currentName]: currentValue,
@@ -42,7 +42,7 @@ export function Register(props) {
     registerUser(user)
       .then(() => {
         setIsLogged(true);
-        navigate("/rent-car");
+        navigate("/cars/all");
       })
       .catch((error) => {
         setError(error.message);

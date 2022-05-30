@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { deleteUser, getAllUsers } from "../../../services/user-service";
+import { userConstants } from "../../../utils/constants";
 import UserCard from "../user-card/UserCard";
 import './UsersList.css';
 
@@ -15,10 +16,15 @@ export function UsersList() {
     }, []);
 
     const deleteUserById = async (id) => {
-        await deleteUser(id);
-        setUsers(pervState => {
+        const currentUser = users.find(u => u.id === id);
+
+        if (window.confirm(userConstants.CONFIRM_TO_DELETE_USER + currentUser.name + " with id: " + currentUser.id))
+        {
+            await deleteUser(id);
+            setUsers(pervState => {
             return pervState.filter(user => user.id !== id);
         });
+        }
     }
 
     return (

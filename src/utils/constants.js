@@ -17,6 +17,10 @@ export const rentConstants = {
     CONFIRM_TO_RETURN_CAR: "Are you sure you want to return ",
 }
 
+export const userConstants = {
+    CONFIRM_TO_DELETE_USER: "Are you sure you want to delete ",
+}
+
 export const carTypes = {
     ECONOMY: "Economy",
     ESTATE: "Estate",

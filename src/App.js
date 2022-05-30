@@ -13,6 +13,7 @@ import { CarForm } from "./components/cars/car-form/CarForm";
 import { UserForm } from "./components/users/user-form/UserForm";
 import { UsersList } from "./components/users/users-list/UsersList";
 import { RentForm } from "./components/rent/rent-form/RentForm";
+import { AdminGuard } from "./utils/guards/AdminGuard";
 
 function App() {
   const [isLogged, setIsLogged] = useState(!!getUser());
@@ -29,8 +30,8 @@ function App() {
           <Route path="/car/edit/:id" element={<AuthenticatedGuard><CarForm /></AuthenticatedGuard>} />
           <Route path="/car/:id" element={<AuthenticatedGuard><CarsList isDetails/></AuthenticatedGuard>} />
           <Route path="/rent/:id" element={<AuthenticatedGuard><RentForm/></AuthenticatedGuard>} />
-          <Route path="/user/:id" element={<UserForm />} />
-          <Route path="/users" element={<UsersList />} />
+          <Route path="/user/:id" element={<AuthenticatedGuard><UserForm /></AuthenticatedGuard>} />
+          <Route path="/users" element={<AdminGuard><UsersList /></AdminGuard>} />
           <Route path="/user/rentals/:id" element={<CarsList areRented/>} />
           <Route exact path="/login" element={<NonAuthenticatedGuard><Login setIsLogged={setIsLogged}/></NonAuthenticatedGuard>} />
           <Route exact path="/register" element={<NonAuthenticatedGuard><Register setIsLogged={setIsLogged}/></NonAuthenticatedGuard>} />

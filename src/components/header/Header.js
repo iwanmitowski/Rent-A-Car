@@ -58,9 +58,13 @@ export default function Header(props) {
                   <Link className="nav-link" to={editUser}>
                     {user.name}
                   </Link>
-                  <Link className="nav-link" to="/users">
-                    Users
-                  </Link>
+                  {
+                    user.isAdmin && 
+                    <Link className="nav-link" to="/users">
+                      Users management
+                    </Link>
+                  }
+                  
                   <Link className="nav-link" to="/" onClick={loggingOut}>
                     Logout
                   </Link>
