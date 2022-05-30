@@ -2,7 +2,7 @@ import axios from "axios";
 import { globalConstants, rentalStatus, rentConstants } from "../utils/constants";
 import { editCar, getCarById } from "./cars-service";
 import { areValidDates } from "./days-service";
-import { vipConditionCheck } from "./user-service";
+import { editUser, getUserById, vipConditionCheck } from "./user-service";
 
 const apiUrl = globalConstants.API_URL + "rentals";
 
@@ -32,6 +32,10 @@ export async function createRent(rent, user, car) {
 
   car.count--;
   await editCar(car);
+
+  const carOwner = (await getUserById(car.ownerId)).data[0];
+  carOwner.money += rent.totalCost;
+  await editUser(carOwner, true);
 
   return axios.post(`${apiUrl}`, rent);
 }

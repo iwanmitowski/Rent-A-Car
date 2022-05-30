@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Form } from "react-bootstrap";
 import { Button } from "react-bootstrap";
 import { useNavigate, useParams } from "react-router-dom";
+import { getUser } from "../../../services/auth-service";
 import { createCar, editCar, getCarById } from "../../../services/cars-service";
 import { carTypes, fuelTypes } from "../../../utils/constants";
 import './CarForm.css'
@@ -11,6 +12,7 @@ export function CarForm(props) {
     const navigate = useNavigate();
 
     const isEdit = !!params.id;
+    const user = getUser();
     
     const [error, setError] = useState("");
     const [car, setCar] = useState({
@@ -20,9 +22,11 @@ export function CarForm(props) {
         model: '',
         constructionYear: '',
         type: '',
+        fuelType: '',
         seatsCount: 0,
         pricePerDay: 0,
         count: 0,
+        ownerId: user.id,
     });
 
     useEffect(() => {
@@ -88,7 +92,7 @@ export function CarForm(props) {
             </Form.Group>
             <Form.Group className="mb-3" controlId="status">
                     <Form.Label>Fuel Type</Form.Label>
-                    <Form.Select placeholder="Select Status" name="type" value={car.fuelType} onChange={onInputChange}> 
+                    <Form.Select placeholder="Select Status" name="fuelType" value={car.fuelType} onChange={onInputChange}> 
                         { Object.keys(fuelTypes).map(type => <option key={type} value={fuelTypes[type]}>{fuelTypes[type]}</option>)}
                     </Form.Select>
             </Form.Group>
@@ -105,6 +109,7 @@ export function CarForm(props) {
                 <Form.Control type="number" name="count" value={car.count} placeholder="Enter car count" onChange={onInputChange}/>
             </Form.Group>
             <Form.Group className="mb-3" controlId="isActive">
+                <Form.Label>Do you want to rent out the car ?</Form.Label>
                 <Form.Check type="checkbox" name="isActive" checked={car.isActive} label="Active" onChange={onInputChange}/>
             </Form.Group>
             <Button variant="primary" type="submit">
