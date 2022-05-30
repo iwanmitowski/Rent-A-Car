@@ -9,7 +9,7 @@ export function daysDiff (startDate, endDate) {
 
 export function get30DaysBeforeToday(){
     let date = new Date(today());
-    date.setDate(date.getDate() - 1);
+    date.setDate(date.getDate() - 30);
 
     return date;
 }

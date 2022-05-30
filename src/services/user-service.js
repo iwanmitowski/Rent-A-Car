@@ -56,13 +56,15 @@ export async function getAllUsers() {
         u.rentalsCount = rentalsCount;
     });
 
+    users.sort((u1, u2) => u2.isVip - u1.isVip);
+
     return users;
 }
 
 export async function vipConditionCheck(user) {
   const rentals = (await getUserRentals(user.id)).data;
-  const rentalsBefore30DaysStartDate = get30DaysBeforeToday();
 
+  const rentalsBefore30DaysStartDate = get30DaysBeforeToday();
   const rentalsLast30Days = rentals.filter(
     (r) => stringToDate(r.startDate) >= rentalsBefore30DaysStartDate && stringToDate(r.startDate) <= today()
   ).length + 1;

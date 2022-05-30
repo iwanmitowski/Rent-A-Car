@@ -66,7 +66,11 @@ export async function getRentedCarsForUser(id, status) {
     });
 
     currentlyRentedCars.sort((c1, c2) => {
-        return stringToDate(c1.rentalEndDate) - stringToDate(c2.rentalEndDate);
+        if (c1.rentalOverDue === c2.rentalOverDue === false){
+            return stringToDate(c1.rentalEndDate) - stringToDate(c2.rentalEndDate);
+        }
+
+        return 1;
     } );
 
     return currentlyRentedCars;
