@@ -18,6 +18,8 @@ export function Register(props) {
     confirmPassword: "",
     isVip: false,
     money: 0,
+    isActive: true,
+    isAdmin: false,
   });
 
   const [error, setError] = useState("");

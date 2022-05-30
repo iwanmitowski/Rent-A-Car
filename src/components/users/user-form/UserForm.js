@@ -65,16 +65,12 @@ export function UserForm(props) {
 
   const changeUserStatus = (e) => {
     e.preventDefault();
-
-    changeUserStatus(user)
+    
+    user.isActive = !user.isActive;
+    editUser(user, true)
       .then((res) => {
-        let updatedStatus = res.data.isActive;
-
-        setUser({ ...user, isActive: updatedStatus });
+        setUser(res.data);
       })
-      .catch((error) => {
-        setError(error.message);
-      });
   };
 
   const backToUsers = () => navigate("/users");
@@ -158,7 +154,7 @@ export function UserForm(props) {
         )}
         {isCurrentUserAdmin && currentUserId !== params.id && (
           <Button variant="danger" onClick={changeUserStatus}>
-            {user.isActive ? "Deactivate" : "Activate"} user
+            {user.isActive ? "Ban" : "Unban"} user
           </Button>
         )}
         {
