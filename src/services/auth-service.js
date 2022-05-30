@@ -70,6 +70,10 @@ export function isAdmin() {
   return getUser().isAdmin;
 }
 
+export function logout() {
+  localStorage.removeItem("loggedUser");
+}
+
 function setUser(user) {
   localStorage.setItem("loggedUser", JSON.stringify(user));
 }

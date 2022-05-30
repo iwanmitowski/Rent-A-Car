@@ -20,7 +20,7 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        <Route exact path="/" element={<Layout isLogged={isLogged} />}>
+        <Route exact path="/" element={<Layout isLogged={isLogged} setIsLogged={setIsLogged}/>}>
           <Route path="/" element={<Home />} />
           <Route path="/cars/all" element={<CarsList />}/>
           <Route path="/cars/mine/:id" element={<AuthenticatedGuard><CarsList areMine/></AuthenticatedGuard>}/>

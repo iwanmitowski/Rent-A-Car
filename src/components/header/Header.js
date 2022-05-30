@@ -1,19 +1,30 @@
 import Navbar from "react-bootstrap/NavBar";
 import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Fragment } from "react";
-import { getUser } from "../../services/auth-service";
+import { getUser, logout } from "../../services/auth-service";
 
 export default function Header(props) {
   // Needed to refresh the header on login
   const isLogged = props.isLogged;
+  const setIsLogged = props.setIsLogged;
+
+  const navigate = useNavigate();
 
   const user = getUser();
   const mineCars = isLogged ? `/cars/mine/${user.id}` : "";
   const rentNewCars = isLogged ? `/cars/rent/${user.id}` : "";
   const editUser = isLogged ? `/user/${user.id}` : "";
   const userRentals = isLogged ? `/user/rentals/${user.id}` : "";
+
+  const loggingOut = (e) => {
+    e.preventDefault();
+    
+    logout();
+    setIsLogged(false);
+    navigate('/');
+  }
 
   return (
     <div className="header">
@@ -49,6 +60,9 @@ export default function Header(props) {
                   </Link>
                   <Link className="nav-link" to="/users">
                     Users
+                  </Link>
+                  <Link className="nav-link" to="/" onClick={loggingOut}>
+                    Logout
                   </Link>
                 </Fragment>
               )}

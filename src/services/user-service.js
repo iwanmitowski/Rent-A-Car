@@ -13,8 +13,8 @@ export function createUser(user) {
     return axios.post(`${apiUrl}`, user);
 }
 
-export async function editUser(user, isVip) {
-    if (isVip) {
+export async function editUser(user, isPartialEdit) {
+    if (isPartialEdit) {
         return axios.patch(`${apiUrl}/${user.id}`, user);
     } else {
         if (!user.password || !user.name) {
