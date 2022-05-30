@@ -44,7 +44,11 @@ export function CarForm(props) {
         setCar((prevState) => {
           let currentName = e.target.name;
           let currentValue = e.target.value;
-    
+            
+          if(currentName === 'isActive'){
+            currentValue = e.target.checked;
+            }
+
           return {
             ...prevState,
             [currentName]: currentValue,

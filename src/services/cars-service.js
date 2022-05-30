@@ -17,7 +17,7 @@ export async function getAllCars(isRent) {
     let cars = (await axios.get(apiUrl)).data;
 
     if(!isRent){
-        cars = cars.filter(c => c.count > 0);
+        cars = cars.filter(c => c.count > 0 && c.isActive);
     }
 
     return cars;
