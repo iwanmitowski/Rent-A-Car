@@ -41,7 +41,7 @@ export async function createRent(rent, user, car) {
 }
 
 export async function editRent(rent) {
-    return axios.put(`${apiUrl}/${rent.id}`, rent);
+    return axios.patch(`${apiUrl}/${rent.id}`, rent);
 }
 
 export async function getRentById(id) {

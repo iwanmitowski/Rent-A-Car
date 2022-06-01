@@ -1,6 +1,7 @@
 import Navbar from "react-bootstrap/NavBar";
 import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
+import NavDropdown from "react-bootstrap/NavDropdown";
 import { Link, useNavigate } from "react-router-dom";
 import { Fragment } from "react";
 import { getUser, logout } from "../../services/auth-service";
@@ -40,21 +41,32 @@ export default function Header(props) {
             <Nav className="me-auto">
               {isLogged && (
                 <Fragment>
-                  <Link className="nav-link" to={rentNewCars}>
-                    Rent new car
+                  <Link className="nav-link" to="/cars/all">
+                    All cars
                   </Link>
-                  <Link className="nav-link" to={userRentals}>
-                    My rentals
-                  </Link>
-                  <Link className="nav-link" to={mineCars}>
-                    Mine cars
-                  </Link>
-                  <Link className="nav-link" to="/cars/create">
-                    Create car
-                  </Link>
-                  <Link className="nav-link" to={editUser}>
-                    {user.name}
-                  </Link>
+                  <NavDropdown title="Cars" id="collasible-nav-dropdown">
+                    <NavDropdown.Item>
+                      <Link className="nav-link" to={rentNewCars}>
+                        Rent new car
+                      </Link>
+                    </NavDropdown.Item>
+                    <NavDropdown.Item>
+                      <Link className="nav-link" to={userRentals}>
+                        My rentals
+                      </Link>
+                    </NavDropdown.Item>
+                    <NavDropdown.Item>
+                      <Link className="nav-link" to={mineCars}>
+                        Mine cars
+                      </Link>
+                    </NavDropdown.Item>
+                    <NavDropdown.Divider />
+                    <NavDropdown.Item>
+                      <Link className="nav-link" to="/cars/create">
+                        Create car
+                      </Link>
+                    </NavDropdown.Item>
+                  </NavDropdown>
                   {
                     user.isAdmin && 
                     <Link className="nav-link" to="/users">
@@ -62,16 +74,10 @@ export default function Header(props) {
                     </Link>
                   }
                   
-                  <Link className="nav-link" to="/" onClick={loggingOut}>
-                    Logout
-                  </Link>
                 </Fragment>
               )}
               {!isLogged && (
                 <Fragment>
-                  <Link className="nav-link" to="/cars/all">
-                    All cars
-                  </Link>
                   <Link className="nav-link" to="/login">
                     Login
                   </Link>
@@ -82,6 +88,19 @@ export default function Header(props) {
               )}
             </Nav>
           </Navbar.Collapse>
+          <Navbar.Collapse className="justify-content-end">
+          <Navbar.Text>
+          <Link className="nav-link" to={editUser}>
+                    {user.name}
+                  </Link>
+          </Navbar.Text>
+          <Nav>
+          <Link className="nav-link" to="/" onClick={loggingOut}>
+                    Logout
+                  </Link>
+          </Nav>
+        
+        </Navbar.Collapse>
         </Container>
       </Navbar>
     </div>

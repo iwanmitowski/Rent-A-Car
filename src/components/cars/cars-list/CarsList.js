@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Button } from "react-bootstrap";
+import { useNavigate, useParams } from "react-router-dom";
 import { deleteCar, getAllCars, getCarById, getCarsForUser, getNonUserCars, getRentedCarsForUser } from "../../../services/cars-service";
 import { returnCar } from "../../../services/rentals-service";
 import { rentalStatus } from "../../../utils/constants";
@@ -9,6 +10,7 @@ import './CarsList.css';
 export function CarsList(props) {
     const [cars, setCars] = useState([]);
     const params = useParams();
+    const navigate = useNavigate();
 
     const areMine = props.areMine;
     const isDetails = props.isDetails;
@@ -53,7 +55,7 @@ export function CarsList(props) {
                 setCars(res);
             })
             .catch();
-    }, [params.id, areMine]);
+    }, [params.id, areMine, areRented, isDetails]);
 
     const deleteCarById = async (id) => {
         await deleteCar(id);
@@ -69,6 +71,17 @@ export function CarsList(props) {
                     setCars(res);
                 })
                 .catch();
+    }
+
+    const toAllCars = () => {
+        navigate('/cars/all');
+      }
+
+    if (cars.length === 0) {
+        return <div className="text-center">
+                <h1>There are no cars</h1>
+                <Button variant="primary" onClick={toAllCars}>Explore now</Button>
+            </div>
     }
 
     return (
