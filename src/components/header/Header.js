@@ -86,18 +86,20 @@ export default function Header(props) {
               )}
             </Nav>
           </Navbar.Collapse>
-          <Navbar.Collapse className="justify-content-end">
-            <Navbar.Text>
-              <Link className="nav-link" to={editUser}>
-                {user.name}
-              </Link>
-            </Navbar.Text>
-            <Nav>
-              <Link className="nav-link" to="/" onClick={loggingOut}>
-                Logout
-              </Link>
-            </Nav>
-          </Navbar.Collapse>
+          {isLogged && (
+            <Navbar.Collapse className="justify-content-end">
+              <Navbar.Text>
+                <Link className="nav-link" to={editUser}>
+                  {user.name}
+                </Link>
+              </Navbar.Text>
+              <Nav>
+                <Link className="nav-link" to="/" onClick={loggingOut}>
+                  Logout
+                </Link>
+              </Nav>
+            </Navbar.Collapse>
+          )}
         </Container>
       </Navbar>
     </div>
