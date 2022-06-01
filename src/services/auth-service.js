@@ -53,6 +53,9 @@ export async function loginUser(user) {
   if (!existingUser) {
     throw new Error(authConstants.INVALID_USERNAME_PASSWORD);
   }
+  if (!existingUser.isActive) {
+    throw new Error(authConstants.YOU_ARE_BANNED)
+  }
 
   Reflect.deleteProperty(existingUser, "password");
 
