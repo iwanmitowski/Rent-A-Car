@@ -21,11 +21,11 @@ export default function Header(props) {
 
   const loggingOut = (e) => {
     e.preventDefault();
-    
+
     logout();
     setIsLogged(false);
-    navigate('/');
-  }
+    navigate("/");
+  };
 
   return (
     <div className="header">
@@ -67,13 +67,11 @@ export default function Header(props) {
                       </Link>
                     </NavDropdown.Item>
                   </NavDropdown>
-                  {
-                    user.isAdmin && 
+                  {user.isAdmin && (
                     <Link className="nav-link" to="/users">
                       Users management
                     </Link>
-                  }
-                  
+                  )}
                 </Fragment>
               )}
               {!isLogged && (
@@ -89,18 +87,17 @@ export default function Header(props) {
             </Nav>
           </Navbar.Collapse>
           <Navbar.Collapse className="justify-content-end">
-          <Navbar.Text>
-          <Link className="nav-link" to={editUser}>
-                    {user.name}
-                  </Link>
-          </Navbar.Text>
-          <Nav>
-          <Link className="nav-link" to="/" onClick={loggingOut}>
-                    Logout
-                  </Link>
-          </Nav>
-        
-        </Navbar.Collapse>
+            <Navbar.Text>
+              <Link className="nav-link" to={editUser}>
+                {user.name}
+              </Link>
+            </Navbar.Text>
+            <Nav>
+              <Link className="nav-link" to="/" onClick={loggingOut}>
+                Logout
+              </Link>
+            </Nav>
+          </Navbar.Collapse>
         </Container>
       </Navbar>
     </div>

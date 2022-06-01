@@ -56,15 +56,15 @@ export function RentForm() {
   }, [params.id, rent.totalCost]);
 
   const calculateDiscont = (diffDays) => {
-		if (diffDays > 10) {
-			return 0.9;
-		} else if (diffDays > 5) {
-			return 0.93;
-		} else if (diffDays > 3) {
-			return 0.95;
-		}
+    if (diffDays > 10) {
+      return 0.9;
+    } else if (diffDays > 5) {
+      return 0.93;
+    } else if (diffDays > 3) {
+      return 0.95;
+    }
 
-		return 1;
+    return 1;
   };
 
   const onInputChange = (e) => {
@@ -72,7 +72,7 @@ export function RentForm() {
     setRent((prevState) => {
       currentName = e.target.name;
       let currentValue = e.target.value;
-			
+
       return {
         ...prevState,
         [currentName]: currentValue,
@@ -89,7 +89,6 @@ export function RentForm() {
         !!prevState.endDate &&
         areValidDates
       ) {
-				
         let daysDiff = findDateDiff(prevState.startDate, prevState.endDate);
 
         let discountPercent = calculateDiscont(daysDiff);
@@ -98,9 +97,9 @@ export function RentForm() {
           discountPercent -= 0.15;
         }
 
-				totalCost = (car.pricePerDay * daysDiff) * discountPercent;
+        totalCost = car.pricePerDay * daysDiff * discountPercent;
       }
-			
+
       return {
         ...prevState,
         totalCost,
@@ -187,7 +186,13 @@ export function RentForm() {
         <Form.Group className="mb-3" controlId="totalCost">
           <Form.Label style={{ fontWeight: "bold" }}>Total cost:</Form.Label>
           <Col sm="10">
-            <Form.Control plaintext readOnly name="totalCost" value={rent.totalCost} onChange={onInputChange}/>
+            <Form.Control
+              plaintext
+              readOnly
+              name="totalCost"
+              value={rent.totalCost}
+              onChange={onInputChange}
+            />
           </Col>
         </Form.Group>
         {car.count > 0 && (

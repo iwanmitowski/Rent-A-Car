@@ -1,10 +1,10 @@
 import { Outlet } from "react-router-dom";
-import './Main.css';
+import "./Main.css";
 
 export default function Main() {
-    return (
-        <div className="main-content">
-            <Outlet />
-        </div>
-    );
+  return (
+    <div className="main-content">
+      <Outlet />
+    </div>
+  );
 }

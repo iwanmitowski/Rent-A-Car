@@ -8,8 +8,8 @@
       "email": "a@a.a",
       "password": "a@a.a",
       "phone": "+1 (977) 521-4",
-      "isVip": false,
-      "money": "1234",
+      "isVip": true,
+      "money": 1106.0865000000001,
       "isAdmin": true
     },
     {
@@ -66,24 +66,28 @@
       "email": "test@test.test",
       "phone": "test@test.test",
       "password": "test@test.test",
-      "isVip": false,
-      "money": 9999,
-      "id": "3NZDb6-"
+      "isVip": true,
+      "money": 9992.76,
+      "id": "3NZDb6-",
+      "isActive": true
     },
     {
-      "imageUrl": " https://picsum.photos/200/300?random=0.20168863249199398",
-      "name": "b@b.b",
-      "email": "b@b.b",
+      "imageUrl": " https://picsum.photos/200/300?random=0.26882945447363493",
+      "name": "q@q.q",
+      "email": "q@q.q",
       "phone": "1234567899",
+      "password": "q@q.q",
       "isVip": false,
-      "money": 99899,
-      "id": "8G1qQfP"
+      "money": 23,
+      "isActive": true,
+      "isAdmin": false,
+      "id": "5j-XhuI"
     }
   ],
   "cars": [
     {
       "id": "6230608a-e4df-445b-bba5-15ed70a197fb",
-      "isActive": false,
+      "isActive": true,
       "imageUrl": "https://www.nastarta.com/wp-content/uploads/2019/05/5b08aa21-ferrari-sf90-stradale-2.jpg",
       "brand": "Ferrari",
       "model": "Golf",
@@ -92,13 +96,13 @@
       "fuelType": "Petrol",
       "seatsCount": "23",
       "pricePerDay": 100,
-      "count": 0,
+      "count": 9,
       "ownerId": "f529a9c7-b5bb-4d3c-a451-825c03b12013",
       "carInfo": "Ferrari - Golf"
     },
     {
       "id": "e9b82c0f-9ea0-4cc4-a84f-a1b9992349b2",
-      "isActive": false,
+      "isActive": true,
       "imageUrl": "https://automedia.investor.bg//media/files/resized/article/w1200x630/2d1/9ad87478c7c4aa258c0be4d35b31d2d1-ferrari-sf90-stradale-2020-800-02.jpg",
       "brand": "Ferrari",
       "model": "C180",
@@ -108,7 +112,8 @@
       "seatsCount": 4,
       "pricePerDay": 670.77,
       "count": 4,
-      "ownerId": "f529a9c7-b5bb-4d3c-a451-825c03b12013"
+      "ownerId": "f529a9c7-b5bb-4d3c-a451-825c03b12013",
+      "carInfo": "Ferrari - C180"
     },
     {
       "id": "314e4bee-a260-40dc-823a-e5e253eba2c0",
@@ -121,7 +126,7 @@
       "fuelType": "Petrol",
       "seatsCount": 5,
       "pricePerDay": 270.11,
-      "count": 2,
+      "count": 3,
       "ownerId": "c5a4e854-9689-4eb0-979a-12212d838d2b",
       "carInfo": "VW - C180"
     },
@@ -134,8 +139,24 @@
       "type": "",
       "seatsCount": "4",
       "pricePerDay": "4",
-      "count": "4",
-      "id": "A5dDiED"
+      "count": 2,
+      "id": "A5dDiED",
+      "carInfo": "isEdit - isEdit"
+    },
+    {
+      "isActive": true,
+      "imageUrl": "",
+      "brand": "Nova kola",
+      "model": "Nov",
+      "constructionYear": "2022-05-23",
+      "type": "Luxury",
+      "fuelType": "Diesel",
+      "seatsCount": "12",
+      "pricePerDay": "1",
+      "count": 100,
+      "ownerId": "f529a9c7-b5bb-4d3c-a451-825c03b12013",
+      "id": "p-zYoPL",
+      "carInfo": "Nova kola - Nov"
     }
   ],
   "rentals": [
@@ -153,7 +174,7 @@
       "carId": "6230608a-e4df-445b-bba5-15ed70a197fb",
       "startDate": "2022-05-29",
       "endDate": "2022-05-29",
-      "status": "In use",
+      "status": "Returned",
       "totalCost": 100,
       "id": "16VDWZx"
     },
@@ -162,7 +183,7 @@
       "carId": "6230608a-e4df-445b-bba5-15ed70a197fb",
       "startDate": "2022-05-29",
       "endDate": "2022-05-29",
-      "status": "In use",
+      "status": "Returned",
       "totalCost": 100,
       "id": "bpHwmZO"
     },
@@ -180,7 +201,7 @@
       "carId": "6230608a-e4df-445b-bba5-15ed70a197fb",
       "startDate": "2022-05-29",
       "endDate": "2022-05-29",
-      "status": "In use",
+      "status": "Returned",
       "totalCost": 100,
       "id": "Rizyy8E"
     },
@@ -198,7 +219,7 @@
       "carId": "6230608a-e4df-445b-bba5-15ed70a197fb",
       "startDate": "2022-06-05",
       "endDate": "2022-06-07",
-      "status": "In use",
+      "status": "Returned",
       "totalCost": 300,
       "id": "xisEeRV"
     },
@@ -207,7 +228,7 @@
       "carId": "314e4bee-a260-40dc-823a-e5e253eba2c0",
       "startDate": "2022-05-29",
       "endDate": "2022-05-29",
-      "status": "In use",
+      "status": "Returned",
       "totalCost": 270.11,
       "id": "hfTT6_Z"
     },
@@ -216,7 +237,7 @@
       "carId": "6230608a-e4df-445b-bba5-15ed70a197fb",
       "startDate": "2022-05-29",
       "endDate": "2022-05-29",
-      "status": "In use",
+      "status": "Returned",
       "totalCost": 100,
       "id": "mzxJBdE"
     },
@@ -225,9 +246,72 @@
       "carId": "6230608a-e4df-445b-bba5-15ed70a197fb",
       "startDate": "2022-06-05",
       "endDate": "2022-06-05",
-      "status": "In use",
+      "status": "Returned",
       "totalCost": 100,
       "id": "IST3-hG"
+    },
+    {
+      "userId": "8G1qQfP",
+      "carId": "e9b82c0f-9ea0-4cc4-a84f-a1b9992349b2",
+      "startDate": "2022-05-29",
+      "endDate": "2022-06-05",
+      "status": "Returned",
+      "totalCost": 4990.5288,
+      "id": "1Q_IHlT"
+    },
+    {
+      "userId": "8G1qQfP",
+      "carId": "e9b82c0f-9ea0-4cc4-a84f-a1b9992349b2",
+      "startDate": "2022-05-29",
+      "endDate": "2022-05-29",
+      "status": "Returned",
+      "totalCost": 670.77,
+      "id": "pj3ZZvG"
+    },
+    {
+      "userId": "8G1qQfP",
+      "carId": "6230608a-e4df-445b-bba5-15ed70a197fb",
+      "startDate": "2022-05-30",
+      "endDate": "2022-05-30",
+      "status": "Returned",
+      "totalCost": 100,
+      "id": "MhIlwkE"
+    },
+    {
+      "userId": "8G1qQfP",
+      "carId": "6230608a-e4df-445b-bba5-15ed70a197fb",
+      "startDate": "2022-05-29",
+      "endDate": "2022-05-29",
+      "status": "Returned",
+      "totalCost": 100,
+      "id": "QfSgPae"
+    },
+    {
+      "userId": "8G1qQfP",
+      "carId": "6230608a-e4df-445b-bba5-15ed70a197fb",
+      "startDate": "2022-05-29",
+      "endDate": "2022-05-29",
+      "status": "In use",
+      "totalCost": 100,
+      "id": "CWbsjp6"
+    },
+    {
+      "userId": "8G1qQfP",
+      "carId": "6230608a-e4df-445b-bba5-15ed70a197fb",
+      "startDate": "2022-05-29",
+      "endDate": "2022-06-05",
+      "status": "In use",
+      "totalCost": 744,
+      "id": "R0Fr8VG"
+    },
+    {
+      "userId": "5j-XhuI",
+      "carId": "6230608a-e4df-445b-bba5-15ed70a197fb",
+      "startDate": "2022-06-01",
+      "endDate": "2022-06-01",
+      "status": "Returned",
+      "totalCost": 100,
+      "id": "xIJKVDd"
     }
   ]
 }

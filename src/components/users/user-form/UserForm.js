@@ -13,7 +13,7 @@ export function UserForm(props) {
   const isCurrentUserAdmin = isAdmin();
   const currentUserId = getUser().id;
   const isEdit = params.id === currentUserId;
-  
+
   const [error, setError] = useState("");
   const [user, setUser] = useState({
     imageUrl: "",
@@ -65,12 +65,11 @@ export function UserForm(props) {
 
   const changeUserStatus = (e) => {
     e.preventDefault();
-    
+
     user.isActive = !user.isActive;
-    editUser(user, true)
-      .then((res) => {
-        setUser(res.data);
-      })
+    editUser(user, true).then((res) => {
+      setUser(res.data);
+    });
   };
 
   const backToUsers = () => navigate("/users");
