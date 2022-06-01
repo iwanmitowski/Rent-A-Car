@@ -7,7 +7,8 @@ export const authConstants = {
     USER_ALREADY_REGISTERED: "User with this email already exists",
     PASSWORDS_DONT_MATCH: "Confirm password don't match password",
     MONEY_CANT_BE_NEGATIVE: "Money can't be negative number",
-    FILL_REQUIRED_FIELDS: "Please fill required fields"
+    FILL_REQUIRED_FIELDS: "Please fill required fields",
+    YOU_ARE_BANNED: "You are banned",
 }
 
 export const rentConstants = {
