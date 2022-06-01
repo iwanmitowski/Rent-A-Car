@@ -1,5 +1,5 @@
 export default function Footer() {
-    <div className="footer">
-        Footer works!
+    return <div className="footer text-center mt-3">
+        <p>Rent-A-Car &copy; Iwan Mitowski 2022</p>
     </div>
 }

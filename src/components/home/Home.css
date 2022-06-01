@@ -1,0 +1,17 @@
+.wrapper{
+    height: calc(100vh - 128px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("../../../public/images/car-1.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #ffffff;
+}
+
+.hero-text {
+    font-size: 50px;
+    margin-bottom: 50px;
+}
+
