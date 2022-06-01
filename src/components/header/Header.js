@@ -40,9 +40,6 @@ export default function Header(props) {
             <Nav className="me-auto">
               {isLogged && (
                 <Fragment>
-                  <Link className="nav-link" to="/cars/all">
-                    All cars
-                  </Link>
                   <Link className="nav-link" to={rentNewCars}>
                     Rent new car
                   </Link>
@@ -72,6 +69,9 @@ export default function Header(props) {
               )}
               {!isLogged && (
                 <Fragment>
+                  <Link className="nav-link" to="/cars/all">
+                    All cars
+                  </Link>
                   <Link className="nav-link" to="/login">
                     Login
                   </Link>

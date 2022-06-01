@@ -112,7 +112,7 @@ export function CarCard(props) {
                             <Button variant="danger" onClick={() => deleteCar(car.id)}>Delete</Button>
                         }
                         {
-                            !isCarOwner && !isRented &&
+                            !isCarOwner && !isRented && !!user &&
                             <Button variant="warning" onClick={toRent} >Rent</Button>
                         }
                         {
